@@ -2,6 +2,7 @@ const dino = document.querySelector(".dino");
 const grid = document.querySelector(".grid");
 let gravity = 0.9;
 let isJumping = false
+let isGameOver = false
 
 function control(e){
     if (e.code == 'Space'){
@@ -47,6 +48,17 @@ function generateObstacle(){
     obstacle.classList.add('obstacle');
     grid.appendChild(obstacle);
     obstacle.style.left = obstaclePostition + 'px';
+
+    let timerId = setInterval(() => {
+
+        if (obstaclePostition < 0){
+            clearInterval(timerId);
+            isGameOver = true
+        }
+
+        obstaclePostition -= 10;
+        obstacle.style.left = obstaclePostition + 'px';
+    }, 20)
 }
 
 generateObstacle();
