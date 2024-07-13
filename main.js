@@ -5,6 +5,8 @@ let gravity = 0.9;
 let isJumping = false;
 let isGameOver = false;
 
+let screenWidth = window.screen.width;
+
 function control(e){
     if (e.code == 'Space'){
         if(!isJumping){
@@ -48,7 +50,7 @@ function generateObstacle(){
 
     if(!isGameOver){
         let randomTime = Math.random() * 4000;
-        let obstaclePostition = 1000;
+        let obstaclePostition = screenWidth - 60;
         const obstacle = document.createElement('div');
         obstacle.classList.add('obstacle');
         grid.appendChild(obstacle);
