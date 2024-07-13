@@ -39,7 +39,16 @@ function jump(){
         dino.style.bottom = postition + 'px';
 
     }, 20);
+};
 
+function generateObstacle(){
+    let obstaclePostition = 10000;
+    const obstacle = document.createElement('div');
+    obstacle.classList.add('obstacle');
+    grid.appendChild(obstacle);
+    obstacle.style.left = obstaclePostition + 'px';
 }
+
+generateObstacle();
 
 document.addEventListener('keydown', control);
