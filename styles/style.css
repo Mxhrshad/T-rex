@@ -27,6 +27,10 @@ body{
     animation: slideright 600s infinite linear;
 }
 
+#alert{
+    margin-left: 10px;
+}
+
 .dino{
     background-image: url(./images/t-rex.png);
     width: 60px;
