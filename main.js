@@ -12,6 +12,7 @@ function control(e){
         };
     };
 };
+document.addEventListener('keydown', control);
 
 let postition = 0
 function jump(){
@@ -44,34 +45,33 @@ function jump(){
 };
 
 function generateObstacle(){
-    let randomTime = Math.random() * 4000;
-    let obstaclePostition = 1000;
-    const obstacle = document.createElement('div');
-    obstacle.classList.add('obstacle');
-    grid.appendChild(obstacle);
-    obstacle.style.left = obstaclePostition + 'px';
 
-    let timerId = setInterval(() => {
-
-        if ( obstaclePostition > 0 && obstaclePostition < 60 && postition < 60){
-            clearInterval(timerId);
-            alert.innerHTML = 'Game Over';
-            isGameOver = true;
-
-            // remove all children
-            while (grid.firstChild){
-                grid.removeChild(grid.lastChild);
-            };
-        };
-
-        obstaclePostition -= 10;
-        obstacle.style.left = obstaclePostition + 'px';
-    }, 20);
     if(!isGameOver){
+        let randomTime = Math.random() * 4000;
+        let obstaclePostition = 1000;
+        const obstacle = document.createElement('div');
+        obstacle.classList.add('obstacle');
+        grid.appendChild(obstacle);
+        obstacle.style.left = obstaclePostition + 'px';
+    
+        let timerId = setInterval(() => {
+    
+            if ( obstaclePostition > 0 && obstaclePostition < 60 && postition < 60){
+                clearInterval(timerId);
+                alert.innerHTML = 'Game Over';
+                isGameOver = true;
+    
+                // remove all children
+                while (grid.firstChild){
+                    grid.removeChild(grid.lastChild);
+                };
+            };
+    
+            obstaclePostition -= 10;
+            obstacle.style.left = obstaclePostition + 'px';
+        }, 20);
         setTimeout(generateObstacle, randomTime)
     };
-}
+};
 
 generateObstacle();
-
-document.addEventListener('keydown', control);
