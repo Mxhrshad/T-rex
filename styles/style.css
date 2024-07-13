@@ -10,12 +10,21 @@ body{
     height: 100vh;
 }
 
+@keyframes slideright {
+    from {
+        background-position: 7000%;
+    } to {
+        background-position: 0%;
+    }
+}
+
 #desert{
     background-image: url(./images/t-rex-background.png);
     width: 100%;
     height: 200px;
     position: absolute;
     bottom: 0;
+    animation: slideright 600s infinite linear;
 }
 
 .dino{
@@ -24,4 +33,5 @@ body{
     height: 60px;
     position: absolute;
     bottom: 0;
+    margin: 5px;
 }
