@@ -54,7 +54,12 @@ function generateObstacle(){
         if (obstaclePostition < 0){
             clearInterval(timerId);
             isGameOver = true
-        }
+
+            // remove all children
+            while (grid.firstChild){
+                grid.removeChild(grid.lastChild);
+            };
+        };
 
         obstaclePostition -= 10;
         obstacle.style.left = obstaclePostition + 'px';
