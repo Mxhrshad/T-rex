@@ -44,6 +44,7 @@ function jump(){
 };
 
 function generateObstacle(){
+    let randomTime = Math.random() * 4000;
     let obstaclePostition = 1000;
     const obstacle = document.createElement('div');
     obstacle.classList.add('obstacle');
@@ -67,6 +68,10 @@ function generateObstacle(){
         obstacle.style.left = obstaclePostition + 'px';
     }, 20)
 }
+
+if(!isGameOver){
+    setTimeout(generateObstacle, randomTime)
+};
 
 generateObstacle();
 
