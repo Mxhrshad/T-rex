@@ -1,8 +1,9 @@
 const dino = document.querySelector(".dino");
 const grid = document.querySelector(".grid");
+const alert = document.querySelector('#alert');
 let gravity = 0.9;
-let isJumping = false
-let isGameOver = false
+let isJumping = false;
+let isGameOver = false;
 
 function control(e){
     if (e.code == 'Space'){
@@ -43,7 +44,7 @@ function jump(){
 };
 
 function generateObstacle(){
-    let obstaclePostition = 10000;
+    let obstaclePostition = 1000;
     const obstacle = document.createElement('div');
     obstacle.classList.add('obstacle');
     grid.appendChild(obstacle);
@@ -53,7 +54,8 @@ function generateObstacle(){
 
         if (obstaclePostition < 0){
             clearInterval(timerId);
-            isGameOver = true
+            alert.innerHTML = 'Game Over';
+            isGameOver = true;
 
             // remove all children
             while (grid.firstChild){
