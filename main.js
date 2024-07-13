@@ -66,12 +66,11 @@ function generateObstacle(){
 
         obstaclePostition -= 10;
         obstacle.style.left = obstaclePostition + 'px';
-    }, 20)
+    }, 20);
+    if(!isGameOver){
+        setTimeout(generateObstacle, randomTime)
+    };
 }
-
-if(!isGameOver){
-    setTimeout(generateObstacle, randomTime)
-};
 
 generateObstacle();
 
