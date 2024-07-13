@@ -52,7 +52,7 @@ function generateObstacle(){
 
     let timerId = setInterval(() => {
 
-        if (obstaclePostition < 0){
+        if ( obstaclePostition > 0 && obstaclePostition < 60 && postition < 60){
             clearInterval(timerId);
             alert.innerHTML = 'Game Over';
             isGameOver = true;
