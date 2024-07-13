@@ -35,3 +35,11 @@ body{
     bottom: 0;
     margin: 5px;
 }
+
+.obstacle{
+    background-image: url(./images/cactus.png);
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+}
